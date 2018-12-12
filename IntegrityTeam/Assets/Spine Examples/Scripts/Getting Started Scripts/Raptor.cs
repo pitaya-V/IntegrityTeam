@@ -48,7 +48,7 @@ namespace Spine.Unity.Examples {
 			StartCoroutine(GunGrabRoutine());
 		}
 
-		IEnumerator GunGrabRoutine () {		
+        IEnumerator GunGrabRoutine () {		
 			// Play the walk animation on track 0.
 			skeletonAnimation.AnimationState.SetAnimation(0, walk, true);
 
