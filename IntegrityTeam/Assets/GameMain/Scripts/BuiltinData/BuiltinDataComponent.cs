@@ -15,9 +15,6 @@ namespace StarForce
         [SerializeField]
         private TextAsset m_DefaultDictionaryTextAsset = null;
 
-        [SerializeField]
-        private UpdateResourceForm m_UpdateResourceFormTemplate = null;
-
         private BuildInfo m_BuildInfo = null;
 
         public DeviceModelConfig DeviceModelConfig
@@ -36,14 +33,6 @@ namespace StarForce
             }
         }
 
-        public UpdateResourceForm UpdateResourceFormTemplate
-        {
-            get
-            {
-                return m_UpdateResourceFormTemplate;
-            }
-        }
-
         public void InitBuildInfo()
         {
             if (m_BuildInfoTextAsset == null || string.IsNullOrEmpty(m_BuildInfoTextAsset.text))
@@ -58,9 +47,6 @@ namespace StarForce
                 Log.Warning("Parse build info failure.");
                 return;
             }
-
-            GameEntry.Base.GameVersion = m_BuildInfo.GameVersion;
-            GameEntry.Base.InternalApplicationVersion = m_BuildInfo.InternalApplicationVersion;
         }
 
         public void InitDefaultDictionary()
